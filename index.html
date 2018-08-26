@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+  <style>
+     #mainDiv
+     {
+       width: 500px;
+       height: 500px;
+       margin: 100px auto;
+       perspective: 900px;
+       border: 5px yellow;
+     }
+
+     #boxDiv
+     {
+       width: 500px;
+       transform-style: preserve-3d;
+       animation: rotate 15s linear infinite;
+     }
+
+     #boxDiv div
+     {
+       position: absolute;
+       width: 500px;
+       height: 500px;
+       opacity: 0.8;
+       color: white;
+       font: 80px arial;
+       text-align: center;
+     }
+
+     #front
+     {
+       transform: translateZ(200px);
+       background: yellow;
+
+     }
+     #back
+     {
+       transform: rotateY(180deg) translateZ(300px);
+       background: yellow;
+     }
+     #left
+     {
+       transform: rotateY(-90deg) translateX(-300px);
+       transform-origin: left;
+       background: yellow;
+     }
+     #right
+     {
+       transform: rotateY(90deg) translateX(300px);
+       transform-origin: right;
+       background: yellow;
+     }
+     #top
+     {
+       transform: rotateX(-90deg) translateY(-200px);
+       transform-origin: top;
+       background: #CCCC00
+     }
+
+     @keyframes rotate
+     {
+       0% { transform: rotateY(0); }
+       100% { transform: rotateY(360deg); }
+     }
+  </style>
+</head>
+
+<body>
+  <div id="mainDiv">
+    <div id="boxDiv">
+      <div id="front"><br>Gooday</div>
+      <div id="back"><br></div>
+      <div id="left"><br></div>
+      <div id="right"><br></div>
+      <div id="top"><br></div>
+      <div id="bottom"><br>Gooday</div>
+    </div>
+  </div>
+</body>
+</html>
